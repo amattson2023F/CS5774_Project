@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="View your owned Sprites and track collection mastery.">
+    <title>SpriteDex</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="list.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="homealt.html">SpriteDex</a>
+            <nav class="primary-nav" aria-label="Primary navigation">
+                <a href="homealt.html">Home</a>
+                <a href="home.html#explore">Sprites</a>
+                <a href="list.html" aria-current="page">My Collection</a>
+            </nav>
+            <a href="home.html">Log Out</a>
+        </div>
+    </header>
+    <main class="container collection" id="main">
+        <div class="section-heading">
+            <div>
+                <h1>My Collection</h1>
+                <p>Track your owned Sprites, update progress, and see what's left to master.</p>
+            </div>
+            <a class="button button-dark" href="add.html">+ Add Sprite</a>
+        </div>
+
+        <div class="collection-summary">
+            <section class="collection-stat" aria-labelledby="owned-title">
+                <span class="summary-icon" aria-hidden="true">◇</span>
+                <div>
+                    <p><strong>6 / 6</strong></p>
+                    <h2 id="owned-title">Owned</h2>
+                </div>
+            </section>
+            <section class="collection-stat" aria-labelledby="mastered-title">
+                <span class="summary-icon" aria-hidden="true">☆</span>
+                <div>
+                    <p><strong>3 / 6</strong></p>
+                    <h2 id="mastered-title">Mastered</h2>
+                </div>
+            </section>
+        </div>
+
+        <!-- Search and filters are display-only for this prototype. -->
+        <form class="filters collection-filters" role="search" aria-label="Search your collection">
+            <div>
+                <label for="collection-search">Search collection</label>
+                <input type="search" id="collection-search" name="q" placeholder="Search your collection…">
+            </div>
+            <div>
+                <label for="season">Season</label>
+                <select id="season" name="season">
+                    <option value="all">All Seasons</option>
+                    <option value="c7s4">Chapter 7 Season 4</option>
+                </select>
+            </div>
+            <div>
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                    <option value="all">All Statuses</option>
+                    <option value="owned">Owned</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="mastered">Mastered</option>
+                </select>
+            </div>
+            <div>
+                <label for="variant">Variant</label>
+                <select id="variant" name="variant">
+                    <option value="all">All Variants</option>
+                    <option value="default">Default</option>
+                    <option value="gold">Gold</option>
+                    <option value="cheat-master">Cheat Master</option>
+                    <option value="loot-hacker">Loot Hacker</option>
+                    <option value="bounty-hunter">Bounty Hunter</option>
+                </select>
+            </div>
+            <div>
+                <label for="sort">Sort by</label>
+                <select id="sort" name="sort">
+                    <option value="name">Name</option>
+                    <option value="progress" selected>Progress</option>
+                    <option value="season">Season</option>
+                </select>
+            </div>
+            <button class="button button-dark" type="button">Search</button>
+        </form>
+
+        <div class="collection-grid">
+            <article class="sprite-card">
+                <a href="detail.html?sprite=adventure">
+                    <div class="card-art">
+                        <!-- adventure.webp: https://fortnite.gg/ -->
+                        <img src="assets/adventure.webp" alt="Adventure Sprite">
+                    </div>
+                    <div class="card-copy">
+                        <h2>Adventure Sprite</h2>
+                        <p>Chapter 7 Season 4</p>
+                        <ul class="tags" aria-label="Sprite rarity and collection status">
+                            <li>Rare</li>
+                            <li>Owned</li>
+                            <li>Mastered</li>
+                        </ul>
+                    </div>
+                </a>
+                <div class="mastery-progress">
+                    <progress value="100" max="100" aria-label="Adventure Sprite mastery: 100%">100%</progress>
+                    <span>100%</span>
+                </div>
+            </article>
+            <article class="sprite-card">
+                <a href="detail.html?sprite=tails">
+                    <div class="card-art">
+                        <!-- tails.webp: https://fortnite.gg/ -->
+                        <img src="assets/tails.webp" alt="Tails Sprite">
+                    </div>
+                    <div class="card-copy">
+                        <h2>Tails Sprite</h2>
+                        <p>Chapter 7 Season 4</p>
+                        <ul class="tags" aria-label="Sprite rarity and collection status">
+                            <li>Epic</li>
+                            <li>Owned</li>
+                            <li>Mastered</li>
+                        </ul>
+                    </div>
+                </a>
+                <div class="mastery-progress">
+                    <progress value="100" max="100" aria-label="Tails Sprite mastery: 100%">100%</progress>
+                    <span>100%</span>
+                </div>
+            </article>
+            <article class="sprite-card">
+                <a href="detail.html?sprite=bush">
+                    <div class="card-art">
+                        <!-- bush.webp: https://fortnite.gg/ -->
+                        <img src="assets/bush.webp" alt="Bush Sprite">
+                    </div>
+                    <div class="card-copy">
+                        <h2>Bush Sprite</h2>
+                        <p>Chapter 7 Season 4</p>
+                        <ul class="tags" aria-label="Sprite rarity and collection status">
+                            <li>Rare</li>
+                            <li>Owned</li>
+                            <li>Mastered</li>
+                        </ul>
+                    </div>
+                </a>
+                <div class="mastery-progress">
+                    <progress value="100" max="100" aria-label="Bush Sprite mastery: 100%">100%</progress>
+                    <span>100%</span>
+                </div>
+            </article>
+            <article class="sprite-card">
+                <a href="detail.html?sprite=jonesy">
+                    <div class="card-art">
+                        <!-- jonesy.webp: https://fortnite.gg/ -->
+                        <img src="assets/jonesy.webp" alt="Jonesy Sprite">
+                    </div>
+                    <div class="card-copy">
+                        <h2>Jonesy Sprite</h2>
+                        <p>Chapter 7 Season 4</p>
+                        <ul class="tags" aria-label="Sprite rarity and collection status">
+                            <li>Rare</li>
+                            <li>Owned</li>
+                            <li>In Progress</li>
+                        </ul>
+                    </div>
+                </a>
+                <div class="mastery-progress">
+                    <progress value="60" max="100" aria-label="Jonesy Sprite mastery: 60%">60%</progress>
+                    <span>60%</span>
+                </div>
+            </article>
+            <article class="sprite-card">
+                <a href="detail.html?sprite=shadow">
+                    <div class="card-art">
+                        <!-- shadow.webp: https://fortnite.gg/ -->
+                        <img src="assets/shadow.webp" alt="Shadow Sprite">
+                    </div>
+                    <div class="card-copy">
+                        <h2>Shadow Sprite</h2>
+                        <p>Chapter 7 Season 4</p>
+                        <ul class="tags" aria-label="Sprite rarity and collection status">
+                            <li>Epic</li>
+                            <li>Owned</li>
+                            <li>In Progress</li>
+                        </ul>
+                    </div>
+                </a>
+                <div class="mastery-progress">
+                    <progress value="50" max="100" aria-label="Shadow Sprite mastery: 50%">50%</progress>
+                    <span>50%</span>
+                </div>
+            </article>
+            <article class="sprite-card">
+                <a href="detail.html?sprite=sonic">
+                    <div class="card-art">
+                        <!-- sonic.webp: https://fortnite.gg/ -->
+                        <img src="assets/sonic.webp" alt="Sonic Sprite">
+                    </div>
+                    <div class="card-copy">
+                        <h2>Sonic Sprite</h2>
+                        <p>Chapter 7 Season 4</p>
+                        <ul class="tags" aria-label="Sprite rarity and collection status">
+                            <li>Epic</li>
+                            <li>Owned</li>
+                            <li>In Progress</li>
+                        </ul>
+                    </div>
+                </a>
+                <div class="mastery-progress">
+                    <progress value="40" max="100" aria-label="Sonic Sprite mastery: 40%">40%</progress>
+                    <span>40%</span>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <p class="container">© 2026 SpriteDex</p>
+    </footer>
+</body>
+</html>

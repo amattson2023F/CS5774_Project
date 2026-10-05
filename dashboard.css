@@ -1,0 +1,341 @@
+.dashboard-page {
+    font-size: 14px;
+    background: #fafbfc;
+}
+
+.dashboard-page h1, .dashboard-page h2, .dashboard-page h3 {
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-page .stat-value {
+    font-family: Georgia, serif;
+}
+
+.dashboard-page .primary-nav a {
+    text-decoration: none;
+}
+
+.dashboard-page .primary-nav a[aria-current="page"] {
+    border-bottom: 2px solid #34495a;
+}
+
+.dashboard-page .site-footer p {
+    margin-bottom: 0;
+}
+
+.dashboard-page .site-header {
+    padding: 14px 0;
+}
+
+.dashboard-page .header-inner {
+    gap: 18px;
+    min-height: 40px;
+}
+
+.dashboard-page nav a {
+    margin-right: 12px;
+}
+
+.profile-link {
+    white-space: nowrap;
+}
+
+.profile-link span {
+    color: #64717b;
+}
+
+.dashboard {
+    padding: 24px 0;
+}
+
+.dashboard h1 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.dashboard h2 {
+    font-size: 19px;
+}
+
+.dashboard > .section-heading {
+    margin-bottom: 18px;
+    align-items: flex-start;
+}
+
+.dashboard > .section-heading p {
+    margin: 0;
+    color: #52616d;
+}
+
+/* One wide progress box and three smaller totals. */
+.dashboard-summary {
+    display: grid;
+    grid-template-columns: minmax(0, 2.3fr) repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.dashboard-panel {
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid #cbd2d8;
+    border-radius: 4px;
+    background: white;
+}
+
+.dashboard-summary h2 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.collection-total {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.collection-total .stat-value {
+    font-size: 40px;
+}
+
+.collection-total span {
+    font-size: 13px;
+}
+
+.dashboard progress {
+    display: block;
+    width: 100%;
+    height: 18px;
+    accent-color: #34495a;
+}
+
+.metric-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.metric-panel .stat-value {
+    margin: 14px 0 4px;
+}
+
+.metric-panel h2 {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.metric-icon {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.dashboard-details {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 20px;
+}
+
+.dashboard-details .section-heading {
+    align-items: baseline;
+}
+
+.activity-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.activity-list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+}
+
+.activity-list img {
+    width: 54px;
+    height: 53px;
+    object-fit: contain;
+    flex-shrink: 0;
+    background: #edf0f2;
+    border-radius: 3px;
+}
+
+.activity-list p {
+    margin: 0;
+}
+
+.activity-list a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.activity-list a:hover {
+    text-decoration: underline;
+}
+
+.activity-date {
+    color: #52616d;
+    font-size: 13px;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 0 10px;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+}
+
+.chart-legend li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.chart-legend li > span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #89939c;
+}
+
+.owned-key, .bar-owned, .status-owned {
+    background: #34495a;
+}
+
+.unowned-key, .bar-unowned, .status-unowned {
+    background: #d4d9de;
+}
+
+.mastered-key, .status-mastered {
+    background: #8499ab;
+}
+
+.season-chart {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 25px;
+}
+
+.chart-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 11px;
+    width: 14px;
+}
+
+.chart-columns {
+    display: flex;
+    flex: 1;
+    gap: 16px;
+    height: 151px;
+    list-style: none;
+    margin: 0;
+    padding: 0 12px;
+    border-left: 1px solid #89939c;
+    border-bottom: 1px solid #89939c;
+}
+
+.chart-columns li {
+    flex: 1;
+    min-width: 0;
+    height: 150px;
+    position: relative;
+}
+
+.season-column {
+    height: 150px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.season-column > span {
+    display: block;
+    position: relative;
+    flex-shrink: 0;
+    width: 64px;
+    max-width: 100%;
+}
+
+.units-0 {
+    height: 0;
+}
+
+.season-label {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding-top: 6px;
+    white-space: nowrap;
+    font-size: 10px;
+}
+
+.collection-status {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #dce1e5;
+}
+
+.collection-status h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.status-bar {
+    display: flex;
+    height: 18px;
+    border: 1px solid #89939c;
+}
+
+.status-bar span {
+    flex: 1;
+}
+
+.status-legend {
+    margin: 10px 0 0;
+    justify-content: space-between;
+}
+
+/* Keep the chart values available to screen readers. */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Six Sprites fill the chart height; zero gets a baseline marker. */
+.units-6 {
+    height: 150px;
+}
+
+.bar-owned.units-0 {
+    border-top: 2px solid #34495a;
+}

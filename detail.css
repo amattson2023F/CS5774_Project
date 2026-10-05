@@ -1,0 +1,153 @@
+.sprite-detail {
+    padding: 24px 0;
+    max-width: 1000px;
+}
+
+/* Place the artwork beside the form while keeping the heading first in HTML. */
+.detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    grid-template-areas: "artwork heading" "artwork form";
+    grid-template-rows: auto 1fr;
+    gap: 16px 24px;
+    align-items: start;
+}
+
+.detail-heading {
+    grid-area: heading;
+}
+
+.detail-artwork {
+    grid-area: artwork;
+}
+
+.detail-form {
+    grid-area: form;
+}
+
+.detail-heading h1 {
+    margin-bottom: 8px;
+}
+
+.sprite-portrait {
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    background: #edf0f2;
+    border: 1px solid #bfc6cc;
+}
+
+.sprite-about, .detail-form {
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid #bfc6cc;
+}
+
+.sprite-about h2, .detail-form h2 {
+    font-size: 20px;
+}
+
+.sprite-about {
+    font-size: 14px;
+}
+
+.sprite-about dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 8px;
+}
+
+.sprite-about dt {
+    font-weight: bold;
+}
+
+.sprite-about dd {
+    margin: 0;
+}
+
+.sprite-about ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.status-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 240px;
+    margin-bottom: 10px;
+}
+
+.status-option label {
+    margin: 0;
+}
+
+.detail-field {
+    margin: 16px 0;
+}
+
+.detail-field input, .detail-field select, .detail-field textarea {
+    width: 100%;
+    min-width: 0;
+}
+
+.detail-field textarea {
+    padding: 10px;
+    border: 1px solid #8a969f;
+    color: inherit;
+    font: inherit;
+    resize: vertical;
+}
+
+.detail-field input[type="range"] {
+    display: block;
+    padding: 0;
+    margin: 8px 0 0;
+}
+
+.detail-form input {
+    accent-color: #34495a;
+}
+
+.range-scale {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.personal-rating {
+    padding: 0;
+    margin: 16px 0;
+    border: 0;
+    min-width: 0;
+}
+
+.personal-rating legend {
+    padding: 0;
+    margin-bottom: 6px;
+}
+
+.rating-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.rating-options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.detail-actions {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.button-delete {
+    color: #9b2525;
+    border-color: #9b2525;
+}

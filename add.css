@@ -1,0 +1,72 @@
+.add-page {
+    max-width: 1000px;
+    padding: 24px 0;
+}
+
+.add-page h1 {
+    margin-bottom: 8px;
+}
+
+/* Give the form more room than the preview. */
+.add-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-areas: "form preview";
+    align-items: start;
+    gap: 24px;
+}
+
+.add-form .detail-field:first-child {
+    margin-top: 0;
+}
+
+.status-options {
+    padding: 0;
+    margin: 16px 0;
+    border: 0;
+    min-width: 0;
+}
+
+.status-options legend {
+    padding: 0;
+    margin-bottom: 8px;
+}
+
+.status-choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.status-choices label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.add-form .detail-actions > * {
+    flex: 1;
+    text-align: center;
+}
+
+.sprite-preview {
+    grid-area: preview;
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid #bfc6cc;
+    font-size: 14px;
+}
+
+.sprite-preview h2 {
+    font-size: 20px;
+}
+
+.sprite-preview h3 {
+    margin: 16px 0 8px;
+    font-size: 16px;
+}
+
+.sprite-preview .preview-name {
+    font-size: 22px;
+}

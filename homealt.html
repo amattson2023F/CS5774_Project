@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="View your Sprite collection progress and recent activity.">
+    <title>SpriteDex</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css?v=2">
+</head>
+<body class="dashboard-page">
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="homealt.html">SpriteDex</a>
+            <nav class="primary-nav" aria-label="Primary navigation">
+                <a href="homealt.html" aria-current="page">Home</a>
+                <a href="list.html">Sprites</a>
+                <a href="list.html">My Collection</a>
+            </nav>
+            <a class="profile-link" href="home.html" aria-label="Log out"><span aria-hidden="true">●</span> Log Out</a>
+        </div>
+    </header>
+    <main class="container dashboard" id="main">
+        <div class="section-heading">
+            <div>
+                <h1>Welcome back!</h1>
+                <p>Here's an overview of your Sprite collection.</p>
+            </div>
+            <a class="button button-dark" href="list.html">Browse All Sprites</a>
+        </div>
+
+        <!-- Mastered Sprites are also included in the owned count. -->
+        <div class="dashboard-summary">
+            <section class="dashboard-panel" aria-labelledby="progress-title">
+                <h2 id="progress-title">Collection Progress</h2>
+                <p class="collection-total"><strong class="stat-value">100%</strong> <span>6 owned out of 6 total Sprites</span></p>
+                <progress value="6" max="6" aria-label="Collection owned: 6 of 6 Sprites">6 of 6</progress>
+            </section>
+            <section class="dashboard-panel metric-panel" aria-labelledby="total-title">
+                <span class="metric-icon" aria-hidden="true">◇</span>
+                <p class="stat-value">6</p>
+                <h2 id="total-title">Total Sprites</h2>
+            </section>
+            <section class="dashboard-panel metric-panel" aria-labelledby="owned-title">
+                <span class="metric-icon" aria-hidden="true">✓</span>
+                <p class="stat-value">6</p>
+                <h2 id="owned-title">Owned</h2>
+            </section>
+            <section class="dashboard-panel metric-panel" aria-labelledby="mastered-title">
+                <span class="metric-icon" aria-hidden="true">☆</span>
+                <p class="stat-value">3</p>
+                <h2 id="mastered-title">Mastered</h2>
+            </section>
+        </div>
+
+        <div class="dashboard-details">
+            <section class="dashboard-panel" aria-labelledby="activity-title">
+                <div class="section-heading">
+                    <h2 id="activity-title">Recent Activity</h2>
+                </div>
+
+                <ul class="activity-list">
+                    <li>
+                        <!-- adventure.webp: https://fortnite.gg/ -->
+                        <img src="assets/adventure.webp" alt="Adventure Sprite" width="60" height="53">
+                        <div>
+                            <p>You mastered the <a href="detail.html?sprite=adventure">Adventure Sprite</a>.</p>
+                            <p class="activity-date">2 hours ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <!-- jonesy.webp: https://fortnite.gg/ -->
+                        <img src="assets/jonesy.webp" alt="Jonesy Sprite" width="60" height="53">
+                        <div>
+                            <p>You updated <a href="detail.html?sprite=jonesy">Jonesy Sprite</a> to 60% progress.</p>
+                            <p class="activity-date">1 day ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <!-- tails.webp: https://fortnite.gg/ -->
+                        <img src="assets/tails.webp" alt="Tails Sprite" width="60" height="53">
+                        <div>
+                            <p>You added the <a href="detail.html?sprite=tails">Tails Sprite</a> to your collection.</p>
+                            <p class="activity-date">3 days ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <!-- bush.webp: https://fortnite.gg/ -->
+                        <img src="assets/bush.webp" alt="Bush Sprite" width="60" height="53">
+                        <div>
+                            <p>You marked <a href="detail.html?sprite=bush">Bush Sprite</a> as owned.</p>
+                            <p class="activity-date">5 days ago</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="dashboard-panel" aria-labelledby="season-title">
+                <h2 id="season-title">Progress by Season</h2>
+
+                <ul class="chart-legend" aria-label="Season chart legend">
+                    <li><span class="owned-key" aria-hidden="true"></span>Owned</li>
+                    <li><span class="unowned-key" aria-hidden="true"></span>Not owned</li>
+                </ul>
+                <div class="season-chart">
+                    <div class="chart-axis" aria-hidden="true"><span>6</span><span>3</span><span>0</span></div>
+                    <ul class="chart-columns" aria-label="Owned and not owned Sprites by season">
+                        <li>
+                            <span class="visually-hidden">Chapter 7 Season 3: 0 owned, 0 not owned.</span>
+                            <div class="season-column" aria-hidden="true"><span class="bar-owned units-0"></span><span class="bar-unowned units-0"></span></div>
+                            <span class="season-label" aria-hidden="true">C7 S3</span>
+                        </li>
+                        <li>
+                            <span class="visually-hidden">Chapter 7 Season 4: 6 owned, 0 not owned.</span>
+                            <div class="season-column" aria-hidden="true"><span class="bar-owned units-6"></span><span class="bar-unowned units-0"></span></div>
+                            <span class="season-label" aria-hidden="true">C7 S4</span>
+                        </li>
+                    </ul>
+                </div>
+                <section class="collection-status" aria-labelledby="status-title">
+                    <h3 id="status-title">Collection by Status</h3>
+
+                    <div class="status-bar" role="img" aria-label="6 Sprites: 3 owned but not mastered, 3 mastered, and 0 not owned.">
+                        <span class="status-owned"></span><span class="status-mastered"></span>
+                    </div>
+                    <ul class="chart-legend status-legend">
+                        <li><span class="owned-key" aria-hidden="true"></span>Owned (6)</li>
+                        <li><span class="unowned-key" aria-hidden="true"></span>Not owned (0)</li>
+                        <li><span class="mastered-key" aria-hidden="true"></span>Mastered (3)</li>
+                    </ul>
+                </section>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <p class="container">© 2026 SpriteDex</p>
+    </footer>
+</body>
+</html>

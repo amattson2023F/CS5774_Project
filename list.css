@@ -1,0 +1,108 @@
+.collection {
+    padding: 24px 0;
+}
+
+.collection > .section-heading {
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.collection h1 {
+    margin-bottom: 8px;
+}
+
+.collection > .section-heading p {
+    margin: 0;
+}
+
+.collection-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.collection-stat {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 20px;
+    border: 1px solid #bfc6cc;
+}
+
+.collection-stat p {
+    margin: 0;
+    font-size: 24px;
+}
+
+.collection-stat h2 {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.summary-icon {
+    font-size: 32px;
+}
+
+.collection-filters {
+    display: grid;
+    grid-template-columns: minmax(180px, 2fr) repeat(4, minmax(0, 1fr)) auto;
+    gap: 12px;
+    font-size: 13px;
+}
+
+.collection-filters > div {
+    min-width: 0;
+}
+
+.collection-filters input, .collection-filters select {
+    width: 100%;
+    min-width: 0;
+    height: 42px;
+}
+
+.collection-filters button {
+    height: 42px;
+}
+
+/* Four collection cards per row on desktop. */
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.collection-grid h2 {
+    margin-bottom: 4px;
+    font-size: 18px;
+}
+
+.collection-grid .card-copy p {
+    margin-bottom: 8px;
+}
+
+.collection-grid .card-art img {
+    max-height: 155px;
+    object-fit: contain;
+}
+
+.collection-grid a:hover h2 {
+    text-decoration: underline;
+}
+
+.mastery-progress {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.mastery-progress progress {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    height: 14px;
+    accent-color: #34495a;
+}

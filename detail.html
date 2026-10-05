@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="View the Adventure Sprite and edit its collection details.">
+    <title>SpriteDex</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="detail.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="homealt.html">SpriteDex</a>
+            <nav class="primary-nav" aria-label="Primary navigation">
+                <a href="homealt.html">Home</a>
+                <a href="home.html#explore">Sprites</a>
+                <a href="list.html">My Collection</a>
+            </nav>
+            <a href="home.html">Log Out</a>
+        </div>
+    </header>
+    <main class="container sprite-detail" id="main">
+        <p><a href="list.html">← Back to My Collection</a></p>
+
+        <!-- This static page shows Adventure Sprite for every detail link. -->
+        <div class="detail-layout">
+            <div class="detail-heading">
+                <h1>Adventure Sprite</h1>
+                <ul class="tags" aria-label="Sprite attributes">
+                    <li>Rare</li>
+                    <li>Chapter 7 Season 4</li>
+                </ul>
+            </div>
+
+            <div class="detail-artwork">
+
+                <!-- adventure.webp: https://fortnite.gg/ -->
+                <img class="sprite-portrait" src="assets/adventure.webp" alt="Adventure Sprite">
+                <section class="sprite-about" aria-labelledby="about-title">
+                    <h2 id="about-title">About This Sprite</h2>
+                    <p>Upgrades a random item in the player's inventory with each Level Up!</p>
+                    <dl>
+                        <dt>Name</dt><dd>Adventure Sprite</dd>
+                        <dt>Rarity</dt><dd>Rare</dd>
+                        <dt>Introduced</dt><dd>Chapter 7 Season 4</dd>
+                    </dl>
+                    <h3>Variants</h3>
+                    <ul>
+                        <li>Gold</li>
+                        <li>Cheat Master</li>
+                        <li>Loot Hacker</li>
+                        <li>Bounty Hunter</li>
+                    </ul>
+                </section>
+            </div>
+
+            <form class="detail-form" aria-labelledby="status-title">
+                <h2 id="status-title">Your Collection Status</h2>
+                <div class="status-option">
+                    <label for="owned">Owned</label>
+                    <input type="checkbox" id="owned" name="owned" checked>
+                </div>
+                <div class="status-option">
+                    <label for="mastered">Mastered</label>
+                    <input type="checkbox" id="mastered" name="mastered" checked>
+                </div>
+                <div class="detail-field">
+                    <label for="mastery">Mastery Progress</label>
+                    <input type="range" id="mastery" name="mastery" min="0" max="100" value="100" aria-describedby="mastery-scale">
+                    <div class="range-scale" id="mastery-scale"><span>0%</span><span>100%</span></div>
+                </div>
+                <div class="detail-field">
+                    <label for="variant">Variant</label>
+                    <select id="variant" name="variant">
+                    <option value="default">Default</option>
+                    <option value="gold">Gold</option>
+                    <option value="cheat-master">Cheat Master</option>
+                    <option value="loot-hacker">Loot Hacker</option>
+                    <option value="bounty-hunter">Bounty Hunter</option>
+                </select>
+                </div>
+                <div class="detail-field">
+                    <label for="obtained">Date Obtained</label>
+                    <input type="date" id="obtained" name="obtained" value="2026-05-12">
+                </div>
+                <fieldset class="personal-rating">
+                    <legend>Personal Rating</legend>
+                    <div class="rating-options">
+                        <label for="rating-1"><input type="radio" id="rating-1" name="rating" value="1">1 ★</label>
+                        <label for="rating-2"><input type="radio" id="rating-2" name="rating" value="2">2 ★</label>
+                        <label for="rating-3"><input type="radio" id="rating-3" name="rating" value="3">3 ★</label>
+                        <label for="rating-4"><input type="radio" id="rating-4" name="rating" value="4" checked>4 ★</label>
+                        <label for="rating-5"><input type="radio" id="rating-5" name="rating" value="5">5 ★</label>
+                    </div>
+                </fieldset>
+                <div class="detail-field">
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" name="notes" rows="3">This is my fav sprite!</textarea>
+                </div>
+                <div class="detail-actions">
+                    <button class="button button-delete" type="button">Delete from Collection</button>
+                    <button class="button button-dark" type="button">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <p class="container">© 2026 SpriteDex</p>
+    </footer>
+</body>
+</html>
