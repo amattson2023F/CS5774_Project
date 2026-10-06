@@ -130,3 +130,127 @@ $(function () {
         updatePreview.call(this, false);
     });
 });
+
+$(function () {
+    const $grid = $(".collection-grid");
+    const $dashboard = $(".dashboard");
+    if ($grid.length === 0 && $dashboard.length === 0) {
+        return;
+    }
+
+    // Both pages share progress in this browser; no server or account is required.
+    const storageKey = "spritedex.collection.v1";
+    const initialProgress = { adventure: 100, tails: 100, bush: 100, jonesy: 60, shadow: 50, sonic: 40 };
+    let collection = {};
+
+    function loadCollection() {
+        let saved = {};
+        try {
+            saved = JSON.parse(window.localStorage.getItem(storageKey)) || {};
+        } catch (error) {
+            // Keep the current page usable when storage is unavailable or invalid.
+            saved = collection;
+        }
+        Object.keys(initialProgress).forEach(function (id) {
+            const entry = saved[id];
+            const valid = entry && Number.isFinite(entry.progress) && entry.progress >= 0 && entry.progress <= 100
+                && Number.isFinite(entry.previousProgress) && entry.previousProgress >= 0 && entry.previousProgress < 100;
+            collection[id] = valid ? { progress: entry.progress, previousProgress: entry.previousProgress }
+                : { progress: initialProgress[id], previousProgress: initialProgress[id] === 100 ? 0 : initialProgress[id] };
+        });
+    }
+
+    function renderCollection() {
+        const total = Object.keys(collection).length;
+        const masteredCount = Object.values(collection).filter(function (entry) {
+            return entry.progress === 100;
+        }).length;
+        $grid.find(".sprite-card").each(function () {
+            const $card = $(this);
+            const entry = collection[$card.attr("data-sprite")];
+            if (!entry) {
+                return;
+            }
+            const progress = entry.progress;
+            $card.find(".collection-mastery-checkbox").prop("checked", progress === 100);
+            $card.find(".mastery-progress progress").val(progress).text(progress + "%")
+                .attr("aria-label", $card.find("h2").text() + " mastery: " + progress + "%");
+            $card.find(".mastery-progress span").text(progress + "%");
+            $card.find(".collection-status-tag").text(progress === 100 ? "Mastered" : "In Progress");
+        });
+        $grid.closest(".collection").find(".mastered-count").text(masteredCount + " / " + total);
+        $dashboard.find(".dashboard-mastered-count").text(masteredCount);
+        $dashboard.find(".dashboard-mastered-label").text("Mastered (" + masteredCount + ")");
+        $dashboard.find(".status-owned").css("flex-grow", total - masteredCount);
+        $dashboard.find(".status-mastered").css("flex-grow", masteredCount);
+        $dashboard.find(".status-bar").attr("aria-label", total + " Sprites: " + (total - masteredCount)
+            + " owned but not mastered, " + masteredCount + " mastered, and 0 not owned.");
+    }
+
+    function refreshCollection() {
+        loadCollection();
+        renderCollection();
+    }
+
+    refreshCollection();
+    // Refresh after Back/Forward navigation and changes made in another open tab.
+    $(window).on("pageshow", refreshCollection).on("storage", function (event) {
+        if (event.originalEvent.key === storageKey || event.originalEvent.key === null) {
+            refreshCollection();
+        }
+    });
+    if ($grid.length === 0) {
+        return;
+    }
+
+    const $activity = $("<section>", {
+        class: "collection-activity",
+        "aria-labelledby": "collection-activity-title"
+    }).insertAfter($grid);
+    $("<h2>", { id: "collection-activity-title", text: "Collection Activity" }).appendTo($activity);
+    const $emptyActivity = $("<p>")
+        .text("Check or uncheck Mastered to update a Sprite and your dashboard.")
+        .appendTo($activity);
+    const $activityLog = $("<ul>", {
+        class: "collection-activity-log",
+        role: "log",
+        "aria-labelledby": "collection-activity-title",
+        "aria-relevant": "additions"
+    }).appendTo($activity);
+
+    // One delegated click handler also handles cards added to the grid later.
+    $grid.on("click", ".collection-mastery-checkbox", function () {
+        const $checkbox = $(this);
+        const mastered = this.checked;
+        const $card = $checkbox.closest(".sprite-card");
+        const spriteName = $card.find("h2").text();
+        // Read the latest saved values before updating this Sprite.
+        loadCollection();
+        const entry = collection[$card.attr("data-sprite")];
+        if (!entry) {
+            return;
+        }
+
+        // Remember partial progress so unchecking can undo marking a Sprite mastered.
+        if (mastered) {
+            if (entry.progress < 100) {
+                entry.previousProgress = entry.progress;
+            }
+        }
+        const progress = mastered ? 100 : entry.previousProgress;
+        entry.progress = progress;
+        try {
+            window.localStorage.setItem(storageKey, JSON.stringify(collection));
+        } catch (error) {
+            $("<li>").text("Your browser could not save this change. It will only apply on this page.")
+                .appendTo($activityLog);
+        }
+        renderCollection();
+
+        $emptyActivity.prop("hidden", true);
+        const message = mastered ? "You mastered " + spriteName + "."
+            : "You marked " + spriteName + " as in progress.";
+        $("<li>").text(message + " Mastery is now " + progress + "%.")
+            .appendTo($activityLog);
+    });
+});

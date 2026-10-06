@@ -43,7 +43,7 @@
             <section class="collection-stat" aria-labelledby="mastered-title">
                 <span class="summary-icon" aria-hidden="true">☆</span>
                 <div>
-                    <p><strong>3 / 6</strong></p>
+                    <p><strong class="mastered-count">3 / 6</strong></p>
                     <h2 id="mastered-title">Mastered</h2>
                 </div>
             </section>
@@ -94,7 +94,7 @@
         </form>
 
         <div class="collection-grid">
-            <article class="sprite-card">
+            <article class="sprite-card" data-sprite="adventure">
                 <a href="detail.html?sprite=adventure">
                     <div class="card-art">
                         <!-- adventure.webp: https://fortnite.gg/ -->
@@ -106,7 +106,7 @@
                         <ul class="tags" aria-label="Sprite rarity and collection status">
                             <li>Rare</li>
                             <li>Owned</li>
-                            <li>Mastered</li>
+                            <li class="collection-status-tag">Mastered</li>
                         </ul>
                     </div>
                 </a>
@@ -114,8 +114,12 @@
                     <progress value="100" max="100" aria-label="Adventure Sprite mastery: 100%">100%</progress>
                     <span>100%</span>
                 </div>
+                <label class="collection-mastery-toggle">
+                    <input class="collection-mastery-checkbox" type="checkbox" aria-label="Adventure Sprite mastered" checked>
+                    <span>Mastered</span>
+                </label>
             </article>
-            <article class="sprite-card">
+            <article class="sprite-card" data-sprite="tails">
                 <a href="detail.html?sprite=tails">
                     <div class="card-art">
                         <!-- tails.webp: https://fortnite.gg/ -->
@@ -127,7 +131,7 @@
                         <ul class="tags" aria-label="Sprite rarity and collection status">
                             <li>Epic</li>
                             <li>Owned</li>
-                            <li>Mastered</li>
+                            <li class="collection-status-tag">Mastered</li>
                         </ul>
                     </div>
                 </a>
@@ -135,8 +139,12 @@
                     <progress value="100" max="100" aria-label="Tails Sprite mastery: 100%">100%</progress>
                     <span>100%</span>
                 </div>
+                <label class="collection-mastery-toggle">
+                    <input class="collection-mastery-checkbox" type="checkbox" aria-label="Tails Sprite mastered" checked>
+                    <span>Mastered</span>
+                </label>
             </article>
-            <article class="sprite-card">
+            <article class="sprite-card" data-sprite="bush">
                 <a href="detail.html?sprite=bush">
                     <div class="card-art">
                         <!-- bush.webp: https://fortnite.gg/ -->
@@ -148,7 +156,7 @@
                         <ul class="tags" aria-label="Sprite rarity and collection status">
                             <li>Rare</li>
                             <li>Owned</li>
-                            <li>Mastered</li>
+                            <li class="collection-status-tag">Mastered</li>
                         </ul>
                     </div>
                 </a>
@@ -156,8 +164,12 @@
                     <progress value="100" max="100" aria-label="Bush Sprite mastery: 100%">100%</progress>
                     <span>100%</span>
                 </div>
+                <label class="collection-mastery-toggle">
+                    <input class="collection-mastery-checkbox" type="checkbox" aria-label="Bush Sprite mastered" checked>
+                    <span>Mastered</span>
+                </label>
             </article>
-            <article class="sprite-card">
+            <article class="sprite-card" data-sprite="jonesy">
                 <a href="detail.html?sprite=jonesy">
                     <div class="card-art">
                         <!-- jonesy.webp: https://fortnite.gg/ -->
@@ -169,7 +181,7 @@
                         <ul class="tags" aria-label="Sprite rarity and collection status">
                             <li>Rare</li>
                             <li>Owned</li>
-                            <li>In Progress</li>
+                            <li class="collection-status-tag">In Progress</li>
                         </ul>
                     </div>
                 </a>
@@ -177,8 +189,12 @@
                     <progress value="60" max="100" aria-label="Jonesy Sprite mastery: 60%">60%</progress>
                     <span>60%</span>
                 </div>
+                <label class="collection-mastery-toggle">
+                    <input class="collection-mastery-checkbox" type="checkbox" aria-label="Jonesy Sprite mastered">
+                    <span>Mastered</span>
+                </label>
             </article>
-            <article class="sprite-card">
+            <article class="sprite-card" data-sprite="shadow">
                 <a href="detail.html?sprite=shadow">
                     <div class="card-art">
                         <!-- shadow.webp: https://fortnite.gg/ -->
@@ -190,7 +206,7 @@
                         <ul class="tags" aria-label="Sprite rarity and collection status">
                             <li>Epic</li>
                             <li>Owned</li>
-                            <li>In Progress</li>
+                            <li class="collection-status-tag">In Progress</li>
                         </ul>
                     </div>
                 </a>
@@ -198,8 +214,12 @@
                     <progress value="50" max="100" aria-label="Shadow Sprite mastery: 50%">50%</progress>
                     <span>50%</span>
                 </div>
+                <label class="collection-mastery-toggle">
+                    <input class="collection-mastery-checkbox" type="checkbox" aria-label="Shadow Sprite mastered">
+                    <span>Mastered</span>
+                </label>
             </article>
-            <article class="sprite-card">
+            <article class="sprite-card" data-sprite="sonic">
                 <a href="detail.html?sprite=sonic">
                     <div class="card-art">
                         <!-- sonic.webp: https://fortnite.gg/ -->
@@ -211,7 +231,7 @@
                         <ul class="tags" aria-label="Sprite rarity and collection status">
                             <li>Epic</li>
                             <li>Owned</li>
-                            <li>In Progress</li>
+                            <li class="collection-status-tag">In Progress</li>
                         </ul>
                     </div>
                 </a>
@@ -219,6 +239,10 @@
                     <progress value="40" max="100" aria-label="Sonic Sprite mastery: 40%">40%</progress>
                     <span>40%</span>
                 </div>
+                <label class="collection-mastery-toggle">
+                    <input class="collection-mastery-checkbox" type="checkbox" aria-label="Sonic Sprite mastered">
+                    <span>Mastered</span>
+                </label>
             </article>
         </div>
     </main>

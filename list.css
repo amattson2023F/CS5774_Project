@@ -106,3 +106,48 @@
     height: 14px;
     accent-color: #34495a;
 }
+
+.collection-mastery-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    min-height: 44px;
+    margin: 8px 0 0;
+    cursor: pointer;
+}
+
+.collection-mastery-checkbox {
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+    accent-color: #34495a;
+    cursor: pointer;
+}
+
+.collection-activity {
+    margin-top: 24px;
+    padding: 20px;
+    border: 1px solid #bfc6cc;
+    background: #f6f7f8;
+}
+
+.collection-activity p {
+    margin-bottom: 0;
+}
+
+.collection-activity-log {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.collection-activity-log li {
+    padding: 8px 0;
+}
+
+.collection-activity-log li + li {
+    border-top: 1px solid #bfc6cc;
+}
