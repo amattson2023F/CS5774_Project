@@ -6,6 +6,8 @@
     <meta name="description" content="Look at Sprites, explore their abilities, and track your own Fortnite Sprite collection with SpriteDex.">
     <title>SpriteDex</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="assets/jquery-3.7.1.min.js" defer></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -16,6 +18,11 @@
                 <a href="home.html" aria-current="page">Home</a>
                 <a href="#explore">Sprites</a>
             </nav>
+            <form class="site-search" action="search.html" method="get" role="search" aria-label="Search SpriteDex">
+                <label class="visually-hidden" for="site-search-q">Search SpriteDex</label>
+                <input type="search" id="site-search-q" name="q" placeholder="Try adventure sprite">
+                <button class="button button-dark" type="submit">Search</button>
+            </form>
             <div class="account-actions">
                 <a class="button" href="homealt.html">Log In</a>
                 <a class="button button-dark" href="add.html">Sign Up</a>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Search SpriteDex to find a Sprite and explore its abilities.">
+    <title>Search Results | SpriteDex</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="assets/jquery-3.7.1.min.js" defer></script>
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="home.html" aria-label="SpriteDex home">SpriteDex</a>
+            <nav class="primary-nav" aria-label="Primary navigation">
+                <a href="home.html">Home</a>
+                <a href="home.html#explore">Sprites</a>
+            </nav>
+            <form class="site-search" action="search.html" method="get" role="search" aria-label="Search SpriteDex">
+                <label class="visually-hidden" for="site-search-q">Search SpriteDex</label>
+                <input type="search" id="site-search-q" name="q" placeholder="Try adventure sprite">
+                <button class="button button-dark" type="submit">Search</button>
+            </form>
+            <div class="account-actions">
+                <a class="button" href="homealt.html">Log In</a>
+                <a class="button button-dark" href="add.html">Sign Up</a>
+            </div>
+        </div>
+    </header>
+    <main class="container search-page" id="main">
+        <h1>Search Results</h1>
+        <p id="search-summary" role="status"></p>
+        <noscript><p>Please enable JavaScript to see search results.</p></noscript>
+        <div class="search-results" id="search-results" hidden>
+            <article class="sprite-card">
+                <a href="detail.html?sprite=adventure">
+                    <div class="card-art">
+                        <!-- adventure.webp: https://fortnite.gg/ -->
+                        <img src="assets/adventure.webp" alt="Adventure Sprite">
+                    </div>
+                    <div class="card-copy">
+                        <h2>Adventure Sprite</h2>
+                        <p>Chapter 7 Season 4</p>
+                        <p>Upgrades a random item in the player's inventory with each Level Up!</p>
+                        <ul class="tags" aria-label="Sprite attributes"><li>Rare</li></ul>
+                    </div>
+                </a>
+            </article>
+        </div>
+        <section class="search-empty" id="search-empty" aria-labelledby="search-empty-title" hidden>
+            <h2 id="search-empty-title">No Sprites found</h2>
+            <p>Try searching for <strong>adventure sprite</strong>, or browse the Sprites below.</p>
+            <a class="button" href="home.html#explore">Browse Sprites</a>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p class="container">© 2026 SpriteDex</p>
+    </footer>
+</body>
+</html>
