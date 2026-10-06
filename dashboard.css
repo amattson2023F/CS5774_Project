@@ -11,37 +11,8 @@
     font-family: Georgia, serif;
 }
 
-.dashboard-page .primary-nav a {
-    text-decoration: none;
-}
-
-.dashboard-page .primary-nav a[aria-current="page"] {
-    border-bottom: 2px solid #34495a;
-}
-
 .dashboard-page .site-footer p {
     margin-bottom: 0;
-}
-
-.dashboard-page .site-header {
-    padding: 14px 0;
-}
-
-.dashboard-page .header-inner {
-    gap: 18px;
-    min-height: 40px;
-}
-
-.dashboard-page nav a {
-    margin-right: 12px;
-}
-
-.profile-link {
-    white-space: nowrap;
-}
-
-.profile-link span {
-    color: #64717b;
 }
 
 .dashboard {

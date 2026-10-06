@@ -14,13 +14,20 @@
     <a class="skip-link" href="#main">Skip to main content</a>
     <header class="site-header">
         <div class="container header-inner">
-            <a class="brand" href="homealt.html">SpriteDex</a>
+            <a class="brand" href="homealt.html" aria-label="SpriteDex home">SpriteDex</a>
             <nav class="primary-nav" aria-label="Primary navigation">
                 <a href="homealt.html" aria-current="page">Home</a>
-                <a href="list.html">Sprites</a>
+                <a href="home.html#explore">Sprites</a>
                 <a href="list.html">My Collection</a>
             </nav>
-            <a class="profile-link" href="home.html" aria-label="Log out"><span aria-hidden="true">●</span> Log Out</a>
+            <form class="site-search" action="search.html" method="get" role="search" aria-label="Search SpriteDex">
+                <label class="visually-hidden" for="site-search-q">Search SpriteDex</label>
+                <input type="search" id="site-search-q" name="q" placeholder="Try adventure sprite">
+                <button class="button button-dark" type="submit">Search</button>
+            </form>
+            <div class="account-actions">
+                <a class="button" href="home.html">Log Out</a>
+            </div>
         </div>
     </header>
     <main class="container dashboard" id="main">
