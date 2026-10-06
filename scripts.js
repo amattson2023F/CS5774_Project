@@ -2,7 +2,7 @@
 $(function () {
     const $searchResults = $("#search-results");
 
-    // other pages load this shared file but do not have search results to render.
+    // Other pages load this shared file but do not have search results to render.
     if ($searchResults.length === 0) {
         return;
     }
@@ -10,7 +10,7 @@ $(function () {
     const query = new URLSearchParams(window.location.search).get("q") || "";
     $("#site-search-q").val(query);
 
-    // simulated search  requires the exact phrase
+    // Simulated search requires the exact, case-sensitive phrase.
     if (query === "adventure sprite") {
         $("#search-summary").text('1 result for “adventure sprite”.');
         $searchResults.prop("hidden", false);
@@ -30,7 +30,7 @@ $(function () {
         return;
     }
 
-    // Prototype preview data. Other Sprites use Default until more variants are modeled.
+    // Prototype preview data for all six Sprites and their named variants.
     const sprites = {
         adventure: {
             name: "Adventure Sprite",
@@ -142,11 +142,12 @@ $(function () {
     const storageKey = "spritedex.collection.v1";
     const initialProgress = { adventure: 100, tails: 100, bush: 100, jonesy: 60, shadow: 50, sonic: 40 };
     let collection = {};
+    let storageAvailable = true;
 
     function loadCollection() {
         let saved = {};
         try {
-            saved = JSON.parse(window.localStorage.getItem(storageKey)) || {};
+            saved = storageAvailable ? JSON.parse(window.localStorage.getItem(storageKey)) || {} : collection;
         } catch (error) {
             // Keep the current page usable when storage is unavailable or invalid.
             saved = collection;
@@ -242,6 +243,7 @@ $(function () {
         try {
             window.localStorage.setItem(storageKey, JSON.stringify(collection));
         } catch (error) {
+            storageAvailable = false;
             $("<li>").text("Your browser could not save this change. It will only apply on this page.")
                 .appendTo($activityLog);
         }
