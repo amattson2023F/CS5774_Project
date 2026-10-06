@@ -70,3 +70,10 @@
 .sprite-preview .preview-name {
     font-size: 22px;
 }
+
+.preview-message {
+    margin: 16px 0 0;
+    padding: 10px;
+    border-left: 3px solid #34495a;
+    background: #edf0f2;
+}
